@@ -135,6 +135,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:api']], function () {
         Route::patch('/{encodedId}/toggle-active', [App\Http\Controllers\Admin\PartnerController::class, 'toggleActive']);
     });
 
+    // Clients Management
+    Route::prefix('clients')->group(function () {
+        Route::get('/', [App\Http\Controllers\Admin\ClientController::class, 'index']);
+        Route::post('/', [App\Http\Controllers\Admin\ClientController::class, 'store']);
+        Route::post('/{encodedId}', [App\Http\Controllers\Admin\ClientController::class, 'update']);
+        Route::delete('/{encodedId}', [App\Http\Controllers\Admin\ClientController::class, 'destroy']);
+        Route::patch('/{encodedId}/toggle-active', [App\Http\Controllers\Admin\ClientController::class, 'toggleActive']);
+    });
+
     // Page content (CMS sections per page)
     Route::prefix('pages')->group(function () {
         Route::get('/{pageKey}', [App\Http\Controllers\Admin\PageContentController::class, 'show']);

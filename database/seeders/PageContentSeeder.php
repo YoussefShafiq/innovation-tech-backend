@@ -795,6 +795,11 @@ class PageContentSeeder extends Seeder
                     'title' => 'جهات تثق بنا',
                     'subtitle' => 'لمحة عن القطاعات التي ندعمها.',
                 ],
+                'clients' => [
+                    'tag' => 'العملاء',
+                    'title' => 'عملاؤنا',
+                    'subtitle' => 'شركات ومؤسسات نعمل معها عبر قطاعات ومناطق مختلفة.',
+                ],
                 'about_strip' => [
                     'who_tag' => 'من نحن',
                     'title' => 'شريكك الموحّد لتقنية المعلومات',
@@ -896,6 +901,11 @@ class PageContentSeeder extends Seeder
                 'tag' => 'Partners',
                 'title' => 'Organizations that trust us',
                 'subtitle' => 'A snapshot of the industries and businesses we support.',
+            ],
+            'clients' => [
+                'tag' => 'Clients',
+                'title' => 'Our clients',
+                'subtitle' => 'Businesses and organizations we deliver for — across industries and regions.',
             ],
             'about_strip' => [
                 'who_tag' => 'Who we are',

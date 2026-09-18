@@ -58,6 +58,12 @@ class RolesAndPermissionsSeeder extends Seeder
             'edit_partners',
             'delete_partners',
 
+            // Clients Management
+            'view_clients',
+            'create_clients',
+            'edit_clients',
+            'delete_clients',
+
             // Page content (CMS sections)
             'view_pages',
             'edit_pages',
@@ -109,6 +115,7 @@ class RolesAndPermissionsSeeder extends Seeder
             'view_contacts',
             'view_permissions',
             'view_partners',
+            'view_clients',
             'view_pages',
         ]);
 

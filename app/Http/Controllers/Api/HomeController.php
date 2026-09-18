@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\ClientResource;
 use App\Http\Resources\PartnerResource;
 use App\Http\Resources\ServiceResource;
+use App\Models\Client;
 use App\Models\PageContent;
 use App\Models\Partner;
 use App\Models\Service;
@@ -22,6 +24,7 @@ class HomeController extends Controller
         $settings = Setting::first();
         $services = Service::active()->limit(3)->get();
         $partners = Partner::active()->ordered()->get();
+        $clients = Client::active()->ordered()->get();
 
         $page = PageContent::findByKey('home');
         $sections = [];
@@ -43,6 +46,7 @@ class HomeController extends Controller
             ],
             'services' => ServiceResource::collection($services),
             'partners' => PartnerResource::collection($partners),
+            'clients' => ClientResource::collection($clients),
         ], 'Home page data retrieved successfully');
     }
 }
